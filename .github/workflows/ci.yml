@@ -23,4 +23,6 @@ jobs:
       - name: Syntax check
         run: python -m compileall -q src experiments app tools
       - name: Tests
-        run: pytest -q
+        env:
+          PYTHONPATH: .
+        run: python -m pytest -q
