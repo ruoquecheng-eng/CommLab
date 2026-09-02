@@ -1,0 +1,3 @@
+scheme,steady_bler,steady_goodput_bit_per_use,mean_mcs_index,mean_snr_backoff_db
+Biased open-loop,0.25,2.102357142857143,2.842,0.0
+OLLA target BLER=10%,0.09985714285714285,2.2170714285714284,2.482285714285714,1.4524539682538524

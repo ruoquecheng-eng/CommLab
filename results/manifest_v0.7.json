@@ -1,0 +1,524 @@
+{
+  "release": "v0.7",
+  "generated_utc": "2026-09-01T08:01:51.303192+00:00",
+  "artifact_count": 103,
+  "data_files": 37,
+  "figure_files": 66,
+  "artifacts": [
+    {
+      "path": "results/data/adaptive_modulation.csv",
+      "bytes": 1435,
+      "sha256": "1019626a30133282d0ce8082c4e02cb4da01db0111d3b9be775ca2563839fbaa"
+    },
+    {
+      "path": "results/data/alamouti_diversity.csv",
+      "bytes": 196,
+      "sha256": "b58fda85022b7ae23cf477bd25d76156f5339631ebb63463b9d86eafe6167372"
+    },
+    {
+      "path": "results/data/ber_confidence_intervals.csv",
+      "bytes": 575,
+      "sha256": "b935dc1ababf0e4a14f1f4dbf6a3f6b9c7c533d8720c89d5b88e2ccbc2f90f90"
+    },
+    {
+      "path": "results/data/channel_estimation_methods.csv",
+      "bytes": 801,
+      "sha256": "c65edacdfbfb25428bc11871a6129476430413e97621fc2aa9d486fa7037c6a2"
+    },
+    {
+      "path": "results/data/channel_estimation_nmse.csv",
+      "bytes": 562,
+      "sha256": "e4523026a5fcf16c836bd4aaaff12ecfcabab8c59f513844cbaf019a740694c1"
+    },
+    {
+      "path": "results/data/coded_ofdm.csv",
+      "bytes": 246,
+      "sha256": "b915e1b36bfc9cd527b8dbf431a80d3ad3d752082a1362b68d0522a88dc6d809"
+    },
+    {
+      "path": "results/data/cp_length_tradeoff.csv",
+      "bytes": 552,
+      "sha256": "590978e86cbd9af415deafec9eaf161c69aaa46003e263b1aa9d14554096a007"
+    },
+    {
+      "path": "results/data/doppler_ici.csv",
+      "bytes": 1249,
+      "sha256": "53d175c8e2ef8356e03b74b73c800c039e623e38bc216c549b98d1ad2d40c390"
+    },
+    {
+      "path": "results/data/dpd_rapp.csv",
+      "bytes": 676,
+      "sha256": "5749004133d4e586bf6b9496056325014e8a469b5a6b4aba0bd636b3581b5d94"
+    },
+    {
+      "path": "results/data/frequency_selective_iq.csv",
+      "bytes": 649,
+      "sha256": "4b9b8ceff554a5293dee051767dc5d9379b1da089b49b902b4d9176f6211fce1"
+    },
+    {
+      "path": "results/data/full_system_sync.csv",
+      "bytes": 1498,
+      "sha256": "a7dfa6fbb0423e9e92562f1d7a40b4b47d252ee53174b30d6e8b615b78c58eed"
+    },
+    {
+      "path": "results/data/ici_aware_equalization.csv",
+      "bytes": 2439,
+      "sha256": "d6b27b73878bc7622dd60c63fe369c46e347d14d6945d3bef98cfb264219eb0c"
+    },
+    {
+      "path": "results/data/iq_imbalance_compensation.csv",
+      "bytes": 595,
+      "sha256": "9c5df15b056f44ddb3e47be99fb1e8fb68819084750503dec7c05f173c7d71b3"
+    },
+    {
+      "path": "results/data/ldpc_min_sum_ofdm.csv",
+      "bytes": 327,
+      "sha256": "5a91d804b098ee125e1c9152ef19235fd1c89f0d24c15636a8731e04871f64ac"
+    },
+    {
+      "path": "results/data/learned_polynomial_dpd.csv",
+      "bytes": 726,
+      "sha256": "39ff4737d3a248b12022c907ee91c84d9c0c2312d4670d4e2032086e74bc787a"
+    },
+    {
+      "path": "results/data/memory_polynomial_dpd.csv",
+      "bytes": 471,
+      "sha256": "3f70b68de9132f446275cd2cb39849c9a1141d2369f5b916930f0866472844b9"
+    },
+    {
+      "path": "results/data/mimo_2x2.csv",
+      "bytes": 698,
+      "sha256": "670e083c81cf13c302d3dcc4e1abbfd7917a9e102271a452f879b19834445e99"
+    },
+    {
+      "path": "results/data/mimo_channel_estimation.csv",
+      "bytes": 445,
+      "sha256": "c30b3c4072e44d786884337695941688a7a89bb033686276e19596360fa39841"
+    },
+    {
+      "path": "results/data/mimo_lmmse_estimation.csv",
+      "bytes": 341,
+      "sha256": "3173e71895fee6d4e276a5c6d4908e8d264a453da60d8435ebb529de07e8b6e5"
+    },
+    {
+      "path": "results/data/mimo_ml_detection.csv",
+      "bytes": 468,
+      "sha256": "c1aca45265f85a1414e66acc58c952ea3e6bbec49d030f4c1c5b5fa43bfec2ff"
+    },
+    {
+      "path": "results/data/mimo_ofdm_multipath.csv",
+      "bytes": 365,
+      "sha256": "6aa2ab9392cd4e5ea4e590145e68a15deb21a6c2a1876169e314949b4bad1914"
+    },
+    {
+      "path": "results/data/mimo_pilot_efficiency.csv",
+      "bytes": 389,
+      "sha256": "17e8e933a3165cdeb40c7300748b2068d8e92b4a7f05e69f82d1e697fb7110dd"
+    },
+    {
+      "path": "results/data/mimo_pilot_overhead_summary.csv",
+      "bytes": 133,
+      "sha256": "7630c8978f2dba87fb66ec08fc187789c0f8ae08bfa48358d45f8d78339c5e94"
+    },
+    {
+      "path": "results/data/mmse_symbol_mse.csv",
+      "bytes": 712,
+      "sha256": "eb0f1ec7562a86c295cad208e78a39b9a4fcd29e64f8ffcd0f17e0778a503742"
+    },
+    {
+      "path": "results/data/narrowband_interference.csv",
+      "bytes": 168,
+      "sha256": "347d9d05165d6dcd610e325808e0de3addbd93023d3954ebd59c3adcfc5c45ef"
+    },
+    {
+      "path": "results/data/otfs_high_doppler.csv",
+      "bytes": 377,
+      "sha256": "c8a85ea23741ee2cf49e203b40eb283e047b56e225ef53e67860589cd9b04e2c"
+    },
+    {
+      "path": "results/data/otfs_iterative_detection.csv",
+      "bytes": 438,
+      "sha256": "f05aa49a27f33de5ae94364fe631b0264883db566971ed5e007ce306db973203"
+    },
+    {
+      "path": "results/data/pa_nonlinearity.csv",
+      "bytes": 842,
+      "sha256": "fe25e11514b709bbbbd78c37960257ccd0a8756058e108a387238543dd0f899a"
+    },
+    {
+      "path": "results/data/papr_clipping.csv",
+      "bytes": 636,
+      "sha256": "9ad385c76887ff3ec988111725d7681f552c59bf22d59b349abb8ab6d5308ddc"
+    },
+    {
+      "path": "results/data/papr_slm_summary.csv",
+      "bytes": 255,
+      "sha256": "f2d5ee713f42638e257c09b8bbf7063a8124fda3d9a9bd570012d713cda98347"
+    },
+    {
+      "path": "results/data/phase_noise_tracking.csv",
+      "bytes": 477,
+      "sha256": "9ad6cbc24ac7f97c38ceefbb0e763ce5df8e41e99681e6c30c1176b3bf63fa05"
+    },
+    {
+      "path": "results/data/pilot_density_tradeoff.csv",
+      "bytes": 1549,
+      "sha256": "8ff2ed586db94a716ba52edf313f6cbb485a9c584a963a17d3bd652246084700"
+    },
+    {
+      "path": "results/data/rayleigh_equalizers.csv",
+      "bytes": 936,
+      "sha256": "f6fa50422dbfa1ae551806939d08f66074780b38ff7163240ac627f0c5f0f5d1"
+    },
+    {
+      "path": "results/data/sampling_clock_offset.csv",
+      "bytes": 1055,
+      "sha256": "fde1aad12af98e7417961904bc8762b2ef5dc15129f9c8f5adc961a901da0279"
+    },
+    {
+      "path": "results/data/soft_coded_ofdm.csv",
+      "bytes": 201,
+      "sha256": "67daac13d22e48f955920708d7403f977cd72bee603e093f03f8dc7c301a7795"
+    },
+    {
+      "path": "results/data/synchronization_cfo.csv",
+      "bytes": 762,
+      "sha256": "47d9643edb18acabb872fa6dacd214d0c50b2d3e27a34c2f36165530f3d2f993"
+    },
+    {
+      "path": "results/data/waterfilling_ofdm.csv",
+      "bytes": 438,
+      "sha256": "2a35491043bef5e6cbc164fe17ddc88c969ab56d60f7e7c527944e2fbcc1f45c"
+    },
+    {
+      "path": "results/figures/adaptive_modulation_ber.png",
+      "bytes": 84898,
+      "sha256": "8677a6ce070066375cef8619b252ae28008939ae4176f7543f204e819366db0b"
+    },
+    {
+      "path": "results/figures/adaptive_modulation_goodput.png",
+      "bytes": 49251,
+      "sha256": "83f5175abac6a08086ba7aca4a368e91fa5f0b1b887a545af57b79801967c60b"
+    },
+    {
+      "path": "results/figures/adaptive_modulation_selection.png",
+      "bytes": 34990,
+      "sha256": "7de956c7aa8d3f3e317eedf69523a75047b2acf8bfd83a3d95458947a09165bc"
+    },
+    {
+      "path": "results/figures/alamouti_diversity.png",
+      "bytes": 80424,
+      "sha256": "fc2afd9399b40dc0bb279158b397a755db33ada6fc193f479e5c7076477cc158"
+    },
+    {
+      "path": "results/figures/ber_awgn.png",
+      "bytes": 80610,
+      "sha256": "809aa15e221d9081b86e9d48017a2abbadb465ac842e43e5253066e84e61a5d4"
+    },
+    {
+      "path": "results/figures/ber_confidence_intervals.png",
+      "bytes": 66655,
+      "sha256": "5260900e7fbc239ba10420e6b9c5e15756d8b7b567a35beb163a555a3106d686"
+    },
+    {
+      "path": "results/figures/cfo_estimation_rmse.png",
+      "bytes": 49432,
+      "sha256": "429aa2c609f2a30f0b5156b1d32265feedb2b2e8a972f8adb32f5843302b0164"
+    },
+    {
+      "path": "results/figures/channel_estimation_methods_ber.png",
+      "bytes": 100907,
+      "sha256": "987e08723cd57d405fe4ae1e11f8c4620938fdbb7f05d2d84eac089036165784"
+    },
+    {
+      "path": "results/figures/channel_estimation_methods_nmse.png",
+      "bytes": 81968,
+      "sha256": "b8a7f8a9447224f810309d9c18a848eef339d3143e1d4c1ccb22b7fb84c56b6f"
+    },
+    {
+      "path": "results/figures/channel_estimation_nmse.png",
+      "bytes": 44638,
+      "sha256": "ec5d0ae78e4838a8d00dbc24ee73aa61cfe8bc38efd70150dfd3f3312980b8e1"
+    },
+    {
+      "path": "results/figures/channel_estimation_snapshot.png",
+      "bytes": 75829,
+      "sha256": "43b03b320dde7bfa800ad2ee62e7334d809d4764e0099cdb224ac7d0b8838b84"
+    },
+    {
+      "path": "results/figures/coded_ofdm_ber.png",
+      "bytes": 91481,
+      "sha256": "276c4c59a55db893bf548cef05270b63e4f599e1dce6cc8159145f2b99970752"
+    },
+    {
+      "path": "results/figures/coded_ofdm_rate_tradeoff.png",
+      "bytes": 47727,
+      "sha256": "e2cc32e83d68d6a0d96669451e0a0fa2179bf5b7b6f25b7694b63a1ac51c960b"
+    },
+    {
+      "path": "results/figures/constellation_16qam.png",
+      "bytes": 204383,
+      "sha256": "bb9adcfc0e4e9e3fc82cf6d79015f203f5ff20ce27ab5b1d8dc0b0cb01216951"
+    },
+    {
+      "path": "results/figures/cp_length_ber.png",
+      "bytes": 50333,
+      "sha256": "f6765d7d79bce703c581fb94a2feebcee0d50f035caba118007d59a985336949"
+    },
+    {
+      "path": "results/figures/cp_length_efficiency.png",
+      "bytes": 58704,
+      "sha256": "7d5110938fb4c0860ffb3d486833dbfbabd64e00ff2965dc38dd9714d0546e1b"
+    },
+    {
+      "path": "results/figures/doppler_ici_ber.png",
+      "bytes": 91983,
+      "sha256": "badeab143831de4b921030362af3a354b0d17cc2d5f0155973d74cc6e455f122"
+    },
+    {
+      "path": "results/figures/doppler_ici_evm.png",
+      "bytes": 99480,
+      "sha256": "45db1126591acefff577386c3289d07b85da773ce3183ae6e46783b3b1a4f9bb"
+    },
+    {
+      "path": "results/figures/dpd_evm.png",
+      "bytes": 82873,
+      "sha256": "2a2ded01c89e8c9cfe016f8c07b4cac971a727d6de758d2827ee5576cd98fdac"
+    },
+    {
+      "path": "results/figures/dpd_spectral_regrowth.png",
+      "bytes": 82305,
+      "sha256": "f97bb2981834b21739a2808aad1e66b155d2f1235fa6f88a3034da0a83f2e37c"
+    },
+    {
+      "path": "results/figures/frame_detection_probability.png",
+      "bytes": 38367,
+      "sha256": "9df98044420ef196fb28b5a88274ee6d66db4d2d3ca9671c2752d5b6b3f6b253"
+    },
+    {
+      "path": "results/figures/frequency_selective_iq_ber.png",
+      "bytes": 96013,
+      "sha256": "e36e53c9391c3dbb71050d132466c01f095a1834c9ccc0c0dacfb03d2389a778"
+    },
+    {
+      "path": "results/figures/frequency_selective_iq_evm.png",
+      "bytes": 93409,
+      "sha256": "56ff9a557314ae8d4dd19c0aadd1d69e59ebbf1aaa934c0a335c64dbb14394d8"
+    },
+    {
+      "path": "results/figures/full_system_sync_ber.png",
+      "bytes": 88878,
+      "sha256": "c30189047ff4866c4bf8ca5a16c405979fe9173fbc13bd8367bb748a3458c195"
+    },
+    {
+      "path": "results/figures/full_system_sync_evm.png",
+      "bytes": 53149,
+      "sha256": "3a04239473b2f383c8f626b41f6bbb6dac93877b917f1892a7d83c94e3a80917"
+    },
+    {
+      "path": "results/figures/ici_aware_equalization_ber.png",
+      "bytes": 109722,
+      "sha256": "3fe0529251e482b36d9bcb7fa5dac66703ab05ec97b825a4198b4ffe02aad34b"
+    },
+    {
+      "path": "results/figures/ici_energy_vs_doppler.png",
+      "bytes": 61236,
+      "sha256": "82a73573d8f00ef702983789e49bf1d0002799edaf24651db013c052bd856a97"
+    },
+    {
+      "path": "results/figures/iq_imbalance_ber.png",
+      "bytes": 69547,
+      "sha256": "554eff63aba69bea716ac3370401d9f7c9a72a44d8fb57617a307fc4a5038a44"
+    },
+    {
+      "path": "results/figures/iq_imbalance_evm.png",
+      "bytes": 65283,
+      "sha256": "19e7c5cd06ef5a4163fc6e384ff720a1d7c46ac7a036ebda826f6cdf33789072"
+    },
+    {
+      "path": "results/figures/ldpc_decoder_iterations.png",
+      "bytes": 88739,
+      "sha256": "19bb9a69a05360ad56a8e7670e38c14506ee74bb296628ad8be3ae4c58a9d6eb"
+    },
+    {
+      "path": "results/figures/ldpc_vs_convolutional.png",
+      "bytes": 81384,
+      "sha256": "0d9a770442ebe9427d7e79e45fb12be4500a14a47463d911fc13348bf9c13b5c"
+    },
+    {
+      "path": "results/figures/learned_dpd_evm.png",
+      "bytes": 103188,
+      "sha256": "4f81d0b9ad2f06af660a21edac28d992e30cd522e3c790f266498a8fdf0f8418"
+    },
+    {
+      "path": "results/figures/learned_dpd_spectral.png",
+      "bytes": 110775,
+      "sha256": "68115e779e40fd44e7a6da14bae8442c7478e42546aa9734466fb4a07a4838e3"
+    },
+    {
+      "path": "results/figures/memory_polynomial_dpd_evm.png",
+      "bytes": 63802,
+      "sha256": "b9281d6c6940c4014457a8820a4fd612711b88c72eea24111d423c9dc6bec543"
+    },
+    {
+      "path": "results/figures/memory_polynomial_dpd_guard.png",
+      "bytes": 75830,
+      "sha256": "12af93dcd90bf5e244f535a80e610bd5b563a23125c2694b6e2cef9138253eed"
+    },
+    {
+      "path": "results/figures/mimo_2x2_zf_mmse.png",
+      "bytes": 70262,
+      "sha256": "3966e436db00cdf7944e603f3da11bf4b624ec0b106b568bd64e5aea516655e1"
+    },
+    {
+      "path": "results/figures/mimo_channel_estimation_ber.png",
+      "bytes": 83268,
+      "sha256": "14b59aed95c2a56d234face6a19edea1c36f5f098abd42d31e72b39dcdbd163c"
+    },
+    {
+      "path": "results/figures/mimo_channel_estimation_nmse.png",
+      "bytes": 60539,
+      "sha256": "acbd8c71d88105f236f270510f20a2d6eec1eb66705e62d8986609cb9b1a6d40"
+    },
+    {
+      "path": "results/figures/mimo_lmmse_estimation_nmse.png",
+      "bytes": 75770,
+      "sha256": "eb93114fa843989daae80ef9b44e629010ac2131b3195419c491ca69375776bb"
+    },
+    {
+      "path": "results/figures/mimo_ml_detection_ber.png",
+      "bytes": 98182,
+      "sha256": "352c8310a9504c8b6f7b8e0e2443a7171d83c105338f26acebfccae536f02336"
+    },
+    {
+      "path": "results/figures/mimo_ofdm_multipath_ber.png",
+      "bytes": 83996,
+      "sha256": "e0f98be293cdfeb1df771d4cee63e30953413c8b341e5a54331661ebace7e8f8"
+    },
+    {
+      "path": "results/figures/mimo_pilot_efficiency_nmse.png",
+      "bytes": 90749,
+      "sha256": "c2383953151e362669fbd13f69359d84a25313e759cd7da414062c67485a2baf"
+    },
+    {
+      "path": "results/figures/mmse_symbol_mse.png",
+      "bytes": 69529,
+      "sha256": "17e996d68af9756492ef80ab20b52a2a650db57d15e4081cb9eda131bdc2a01e"
+    },
+    {
+      "path": "results/figures/narrowband_interference_ber.png",
+      "bytes": 67808,
+      "sha256": "dc34dd939bcc279fae6f3c27273b987eaf708133e970472e66cbdf756edaa4a0"
+    },
+    {
+      "path": "results/figures/ofdm_multipath_zf.png",
+      "bytes": 63123,
+      "sha256": "ae68326c478cbd91b43972b6babd6350eb98befd12525d79d66642442641b423"
+    },
+    {
+      "path": "results/figures/otfs_channel_structure.png",
+      "bytes": 63647,
+      "sha256": "b1efcd1c2a1c1779c661178b71d9935a6cc4bf1c0e778bf7d71b01380bcadb88"
+    },
+    {
+      "path": "results/figures/otfs_sparse_cg_ber.png",
+      "bytes": 51710,
+      "sha256": "cb6a0bbcf96d203baec639824de0ce11dcb0b47dda7d7d8d1dbb9f5b0c2ce5ef"
+    },
+    {
+      "path": "results/figures/otfs_sparse_cg_complexity.png",
+      "bytes": 61769,
+      "sha256": "029f21874bf16b23eac56c163b233019dbc8a01b932e2373baab8baa9113e68c"
+    },
+    {
+      "path": "results/figures/otfs_vs_ofdm_high_doppler.png",
+      "bytes": 67850,
+      "sha256": "c87aa978d426b3243caa7cb3297cecc07fd3eb3c6e6108260e8f63a03cf02a01"
+    },
+    {
+      "path": "results/figures/pa_ibo_ber.png",
+      "bytes": 55403,
+      "sha256": "12c6fe93b9c7ad68f3d318a0081704b49f0c27d08c4f75b25197c14487cf2a1c"
+    },
+    {
+      "path": "results/figures/pa_ibo_evm.png",
+      "bytes": 63247,
+      "sha256": "28cf13314dbb808179833be4902a8bfb792eda3a3052ca5663b971d0dff7cb0b"
+    },
+    {
+      "path": "results/figures/pa_spectral_regrowth.png",
+      "bytes": 66136,
+      "sha256": "16c3cbfc01affd1d570720421d5e021a4081be82e932a6d3fe7c2801dcdb2f2e"
+    },
+    {
+      "path": "results/figures/papr_ccdf.png",
+      "bytes": 49022,
+      "sha256": "5d485771568d5a617b8b1a2003499de41af542c4b0b41cb0c2b6f503fb943d8b"
+    },
+    {
+      "path": "results/figures/papr_clipping_tradeoff.png",
+      "bytes": 59605,
+      "sha256": "8705bd102ae4fd4d241ce8dff97d40e5d6acb0d5362d42d32b4c4a1b63353507"
+    },
+    {
+      "path": "results/figures/papr_slm_ccdf.png",
+      "bytes": 102836,
+      "sha256": "a6c3bc14c2c8e336d1f8e62a3727b5ae255613c0299aed9f8d61506da8a1ca84"
+    },
+    {
+      "path": "results/figures/papr_slm_complexity.png",
+      "bytes": 67289,
+      "sha256": "6e92bda87ffa88c08458e204b5fd72482093bdf8f09580002973a759a907f511"
+    },
+    {
+      "path": "results/figures/phase_noise_ber.png",
+      "bytes": 73943,
+      "sha256": "3ffda7863d6a88ac01fb965b275c836610246e6826a49b9b05c37a3bcd2a12ec"
+    },
+    {
+      "path": "results/figures/phase_noise_evm.png",
+      "bytes": 71031,
+      "sha256": "80f8ecf803ca356b48e504e8006500462116995e41bb36004d107682580c7b95"
+    },
+    {
+      "path": "results/figures/pilot_density_nmse.png",
+      "bytes": 67875,
+      "sha256": "fe94abb4a7e90319ece590fec4a48d7f171a09857ddeeb3c39914104fd0c7ff6"
+    },
+    {
+      "path": "results/figures/pilot_density_overhead.png",
+      "bytes": 64678,
+      "sha256": "23ed935d925f2bda821f494d17490ab57548d8447fec78c28c94771e8971a3b4"
+    },
+    {
+      "path": "results/figures/rayleigh_equalizer_comparison.png",
+      "bytes": 69931,
+      "sha256": "c1b07edc1f6a286c2c3bec7621f8c45fd0f11fa45cf131e275f6bae88d1f9014"
+    },
+    {
+      "path": "results/figures/sampling_clock_ber.png",
+      "bytes": 77227,
+      "sha256": "f35ed3dc61261ba57b5580fba27fcc0a6789060a0ee73a6e2b29f1c7fadf30f0"
+    },
+    {
+      "path": "results/figures/sampling_clock_estimation.png",
+      "bytes": 58865,
+      "sha256": "c5b5c1f63224a4a42fe43d371fc3350042b2521a4e0d632cb23476dc7eb609dc"
+    },
+    {
+      "path": "results/figures/soft_viterbi_gain.png",
+      "bytes": 106125,
+      "sha256": "e009437903fd52dc21bc0c82e9ab592c9c4496b05c6b436bb80a6f950ae1eba9"
+    },
+    {
+      "path": "results/figures/waterfilling_allocation.png",
+      "bytes": 97770,
+      "sha256": "9c027834c4d36ffcdc9a927e303072749b6ceabc444ab73c1c05eaf2e9c2b54e"
+    },
+    {
+      "path": "results/figures/waterfilling_capacity.png",
+      "bytes": 77226,
+      "sha256": "6e1ae67b6192de9a44c0368c756cc2628492ab62381f0d3ced5f572d890247e2"
+    }
+  ]
+}

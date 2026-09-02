@@ -1,0 +1,9 @@
+# Human-readable baseline configuration; v0.1 uses the same defaults in OFDMConfig.
+n_fft: 64
+cp_len: 16
+active_subcarriers: 52
+data_subcarriers: 48
+pilot_subcarriers: 4
+modulation: QPSK
+channel: AWGN
+equalizer: perfect-CSI ZF

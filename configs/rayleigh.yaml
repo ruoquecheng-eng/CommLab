@@ -1,0 +1,14 @@
+experiment: rayleigh_equalizer_comparison
+fft_size: 64
+cp_length: 16
+modulation: QPSK
+pilot_subcarriers: [-21, -7, 7, 21]
+channel:
+  type: sparse_rayleigh
+  delays_samples: [0, 1, 3]
+  powers_db: [0.0, -6.0, -12.0]
+estimation:
+  method: LS
+  interpolation: linear_real_imag
+equalizers: [perfect_csi_zf, ls_zf, ls_mmse]
+snr_db: [0, 3, 6, 9, 12, 15, 18, 21, 24]

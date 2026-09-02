@@ -1,0 +1,8 @@
+n_fft: 64
+preamble_seed: 123
+normalized_cfo: 0.12
+timing_offset_samples: 53
+modulation: 16
+ofdm_symbols: 300
+snr_db: [4, 8, 12, 16, 20, 24]
+pilot_phase_tracking: true

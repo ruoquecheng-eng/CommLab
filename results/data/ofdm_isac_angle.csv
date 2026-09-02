@@ -1,0 +1,4 @@
+n_rx,estimated_angle_1_deg,estimated_angle_2_deg,sum_abs_angle_error_deg
+4,-24.25,-19.25,47.5
+8,-17.75,21.5,0.75
+16,-18.0,22.0,0.0

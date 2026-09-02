@@ -1,0 +1,5 @@
+scheme,goodput_kbit_per_slot,nack_rate,p95_delay_slots,mean_delay_slots,dropped_packets,pending_packets,delivery_fraction
+Open-loop / no HARQ,2.988,0.19103313840155944,2.0,1.167871485943775,294,0,0.8089668615984406
+HARQ only,3.6936,0.1984375,4.0,1.6673164392462638,0,0,1.0
+OLLA + HARQ,3.6936,0.10730858468677494,3.0,1.3762183235867447,0,0,1.0
+Delay-PF + OLLA + HARQ,3.6936,0.11040462427745665,3.0,1.409356725146199,0,0,1.0

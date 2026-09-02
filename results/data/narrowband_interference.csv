@@ -1,0 +1,6 @@
+sir_db,target_detected,n_flagged,raw_soft_viterbi_ber,soft_erasure_viterbi_ber
+15,1,1,0.0,0.0
+10,1,1,0.0,0.0
+5,1,1,0.0074,0.0
+0,1,1,0.0132,0.0
+-5,1,1,0.02085,0.0

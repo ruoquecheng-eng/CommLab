@@ -1,0 +1,5 @@
+cp_lengths: [0, 2, 4, 8, 12, 16, 24]
+pilot_counts: [4, 8, 12]
+qam_orders: [4, 16, 64]
+adaptive_modulation_target_ber: 0.01
+papr_clip_ratios_to_rms: [0.9, 1.1, 1.3, 1.6, 2.0, 3.0]
