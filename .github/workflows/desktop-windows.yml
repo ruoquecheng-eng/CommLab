@@ -18,7 +18,7 @@ jobs:
           python-version: "3.12"
           cache: pip
       - name: Install desktop build dependencies
-        run: python -m pip install -e ".[desktop-build]"
+        run: python -m pip install -e ".[desktop-build]" pytest
       - name: Desktop launcher tests
         run: python -m pytest -q tests/test_desktop_launcher.py
       - name: Build portable application
