@@ -3,6 +3,8 @@ name: Build Windows Desktop
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     tags:
       - "desktop-v*"
 
