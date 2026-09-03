@@ -58,3 +58,17 @@ def test_wait_until_ready_stops_if_child_exits():
 def test_user_data_dir_uses_local_appdata(monkeypatch,tmp_path):
     monkeypatch.setenv("LOCALAPPDATA",str(tmp_path))
     assert launcher.user_data_dir()==tmp_path/"CommLab"
+
+
+def test_log_tail_and_diagnostic_report(tmp_path):
+    log_path = tmp_path / "desktop.log"
+    log_path.write_text("first line\nlatest line\n", encoding="utf-8")
+    process = _ExitedProcess()
+    report = launcher.diagnostic_report(process, log_path, 8765)
+    assert "127.0.0.1:8765" in report
+    assert "exited with code 2" in report
+    assert "latest line" in report
+
+
+def test_log_tail_handles_missing_log(tmp_path):
+    assert "Unable to read desktop log" in launcher.log_tail(tmp_path / "missing.log")
