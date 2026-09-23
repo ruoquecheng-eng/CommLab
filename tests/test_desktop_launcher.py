@@ -1,3 +1,4 @@
+from datetime import datetime
 from pathlib import Path
 import subprocess
 
@@ -7,6 +8,19 @@ from desktop import launcher
 def test_source_resource_root_contains_dashboard():
     root=launcher.resource_root()
     assert (root/"app"/"dashboard.py").exists()
+
+
+def test_source_resource_root_supports_unicode_install_path(monkeypatch, tmp_path):
+    root = tmp_path / "中文 用户" / "CommLab"
+    monkeypatch.setattr(launcher, "__file__", str(root / "desktop" / "launcher.py"))
+    assert launcher.resource_root() == root.resolve()
+
+
+def test_frozen_resource_root_supports_unicode_install_path(monkeypatch, tmp_path):
+    root = tmp_path / "中文 用户" / "CommLab"
+    monkeypatch.setattr(launcher.sys, "frozen", True, raising=False)
+    monkeypatch.setattr(launcher.sys, "_MEIPASS", str(root), raising=False)
+    assert launcher.resource_root() == root.resolve()
 
 
 def test_dashboard_path_can_use_explicit_root(tmp_path):
@@ -60,6 +74,19 @@ def test_user_data_dir_uses_local_appdata(monkeypatch,tmp_path):
     assert launcher.user_data_dir()==tmp_path/"CommLab"
 
 
+def test_user_data_dir_supports_unicode_path(monkeypatch,tmp_path):
+    local_appdata = tmp_path / "中文 用户"
+    monkeypatch.setenv("LOCALAPPDATA", str(local_appdata))
+    assert launcher.user_data_dir() == local_appdata / "CommLab"
+
+
+def test_launch_log_path_is_attempt_specific(tmp_path, monkeypatch):
+    monkeypatch.setattr(launcher.os, "getpid", lambda: 4321)
+    stamp = datetime(2026, 9, 4, 12, 34, 56, 789000)
+    path = launcher.launch_log_path(tmp_path, 8765, stamp)
+    assert path == tmp_path / "desktop-20260904-123456-789000-p4321-port8765.log"
+
+
 def test_log_tail_and_diagnostic_report(tmp_path):
     log_path = tmp_path / "desktop.log"
     log_path.write_text("first line\nlatest line\n", encoding="utf-8")
@@ -68,6 +95,17 @@ def test_log_tail_and_diagnostic_report(tmp_path):
     assert "127.0.0.1:8765" in report
     assert "exited with code 2" in report
     assert "latest line" in report
+    assert "CommLab version: 3.8.1" in report
+    assert "Runtime mode: source" in report
+    assert "Dashboard:" in report
+
+
+def test_log_tail_reads_only_latest_text(tmp_path):
+    log_path = tmp_path / "large.log"
+    log_path.write_text("old\n" * 3000 + "latest unicode 中文\n", encoding="utf-8")
+    tail = launcher.log_tail(log_path, limit=80)
+    assert len(tail) <= 80
+    assert tail.endswith("latest unicode 中文")
 
 
 def test_log_tail_handles_missing_log(tmp_path):

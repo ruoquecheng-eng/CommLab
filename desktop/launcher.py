@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
 import os
 from pathlib import Path
 import socket
@@ -13,7 +14,7 @@ import urllib.request
 import webbrowser
 
 
-APP_VERSION = "3.8.0"
+APP_VERSION = "3.8.1"
 HEALTH_PATH = "/_stcore/health"
 
 
@@ -70,28 +71,47 @@ def configure_child_environment() -> dict[str, str]:
     return env
 
 
+def launch_log_path(log_dir: Path, port: int, timestamp: datetime | None = None) -> Path:
+    """Return a separate log path for one launcher attempt."""
+    stamp = (timestamp or datetime.now()).strftime("%Y%m%d-%H%M%S-%f")
+    return log_dir / f"desktop-{stamp}-p{os.getpid()}-port{port}.log"
+
+
 def start_server(port: int) -> tuple[subprocess.Popen, Path]:
     log_dir = user_data_dir() / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
-    log_path = log_dir / "desktop.log"
-    log_handle = log_path.open("a", encoding="utf-8")
+    log_path = launch_log_path(log_dir, port)
     creationflags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
-    process = subprocess.Popen(
-        server_command(port),
-        cwd=resource_root(),
-        env=configure_child_environment(),
-        stdout=log_handle,
-        stderr=subprocess.STDOUT,
-        creationflags=creationflags,
-    )
-    log_handle.close()
+    root = resource_root()
+    with log_path.open("a", encoding="utf-8") as log_handle:
+        log_handle.write(
+            f"=== CommLab Desktop {APP_VERSION} launch ===\n"
+            f"Mode: {'frozen' if getattr(sys, 'frozen', False) else 'source'}\n"
+            f"Python: {sys.executable}\n"
+            f"Resource root: {root}\n"
+            f"Dashboard: {dashboard_path(root)}\n"
+            f"Local address: http://127.0.0.1:{port}\n\n"
+        )
+        log_handle.flush()
+        process = subprocess.Popen(
+            server_command(port),
+            cwd=root,
+            env=configure_child_environment(),
+            stdout=log_handle,
+            stderr=subprocess.STDOUT,
+            creationflags=creationflags,
+        )
     return process, log_path
 
 
 def log_tail(log_path: Path, limit: int = 2400) -> str:
     """Read the newest launcher output without failing the UI on I/O errors."""
     try:
-        text = log_path.read_text(encoding="utf-8", errors="replace")
+        with log_path.open("rb") as log_file:
+            log_file.seek(0, os.SEEK_END)
+            size = log_file.tell()
+            log_file.seek(max(0, size - max(4096, limit * 4)))
+            text = log_file.read().decode("utf-8", errors="replace")
     except OSError as exc:
         return f"Unable to read desktop log: {exc}"
     return text[-limit:].strip() or "No launcher output was recorded."
@@ -101,7 +121,14 @@ def diagnostic_report(process: subprocess.Popen | None, log_path: Path, port: in
     """Produce a compact, copyable failure report for the desktop window."""
     exit_code = None if process is None else process.poll()
     state = "still running" if exit_code is None else f"exited with code {exit_code}"
+    root = resource_root()
+    script = dashboard_path(root)
     return (
+        f"CommLab version: {APP_VERSION}\n"
+        f"Runtime mode: {'frozen' if getattr(sys, 'frozen', False) else 'source'}\n"
+        f"Python: {sys.executable}\n"
+        f"Resource root: {root}\n"
+        f"Dashboard: {script} ({'present' if script.exists() else 'missing'})\n"
         f"Local address: http://127.0.0.1:{port}\n"
         f"Server state: {state}\n"
         f"Log file: {log_path}\n\n"

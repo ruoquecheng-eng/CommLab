@@ -36,7 +36,7 @@ jobs:
         run: ISCC.exe desktop/installer.iss
       - uses: actions/upload-artifact@v4
         with:
-          name: CommLab-v3.8.0-Windows-x64
+          name: CommLab-v3.8.1-Windows-x64
           path: desktop-artifacts/*
           if-no-files-found: error
       - name: Publish public release
@@ -44,4 +44,4 @@ jobs:
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create $env:GITHUB_REF_NAME desktop-artifacts/CommLab-Windows-x64.zip desktop-artifacts/CommLab-Setup-v3.8.0-Windows-x64.exe --title "CommLab v3.8.0" --notes-file docs/release_notes_v3.8.0.md
+        run: gh release create $env:GITHUB_REF_NAME desktop-artifacts/CommLab-Windows-x64.zip desktop-artifacts/CommLab-Setup-v3.8.1-Windows-x64.exe --title "CommLab v3.8.1" --notes-file docs/release_notes_v3.8.1.md

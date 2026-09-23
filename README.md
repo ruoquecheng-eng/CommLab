@@ -1,8 +1,10 @@
 # CommLab — Wireless Communication Systems Laboratory
 
-> **v3.8.0 Workbench:** 130 local simulation labs with search, saved favorites and recents, explicit parameter submission, run records, exports, and same-metric comparison. The v3.7 numerical research results are unchanged.
+> **v3.8.1 Desktop:** Per-launch logs, clearer failure diagnostics, and Unicode-path launcher checks. The v3.8.0 workbench and v3.7 numerical research results are unchanged.
 
-**Current package/runtime:** `3.8.0`. The earlier v3.7.1 Windows packaging acceptance is recorded in `docs/release_acceptance_v3.7.1.md`.
+**Current package/runtime:** `3.8.1`. The earlier v3.7.1 Windows packaging acceptance is recorded in `docs/release_acceptance_v3.7.1.md`.
+
+> **v3.8.0 Workbench:** 130 local simulation labs with search, saved favorites and recents, explicit parameter submission, run records, exports, and same-metric comparison.
 
 > **v3.7.1 Desktop:** Windows double-click launcher, localhost lifecycle control, PyInstaller portable build, Inno Setup installer, and automated Windows artifact workflow.
 
@@ -28,7 +30,7 @@
 
 **CommLab** (Python package/repository name: `commlab-ofdm`) is a modular wireless-communication research and engineering simulator. OFDM remains the backbone, but the platform now spans waveform/receiver design, MIMO, coding/HARQ, RF impairments and linearization, high mobility/OTFS, link adaptation, packet scheduling, information-theoretic studies, communication-centric sensing, edge intelligence, semantic/task-oriented communication, and networked control.
 
-Current release: **v3.8.0 Workbench / package 3.8.0**.
+Current release: **v3.8.1 Desktop / package 3.8.1**.
 
 ## Windows desktop edition
 
