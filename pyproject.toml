@@ -15,8 +15,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=7.4"]
-app = ["streamlit>=1.36", "pandas>=2.0"]
+dev = ["pytest>=7.4", "streamlit>=1.63,<2", "pandas>=2,<4"]
+app = ["streamlit>=1.63,<2", "pandas>=2,<4"]
 desktop = ["streamlit>=1.63,<2", "pandas>=2.0,<4"]
 desktop-build = ["streamlit>=1.63,<2", "pandas>=2.0,<4", "pyinstaller>=6.22,<7"]
 

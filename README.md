@@ -10,15 +10,15 @@
 
 > **v3.6:** safe offline counterfactual reliability evaluation. v3.6 logs known action propensities and compares DM, IPS, SNIPS, DR, and clipped DR while explicitly reporting effective sample size, support violations, temporal-estimand drift, and policy-selection regret. Critical tasks are never logged without protection.
 
-**Current package/runtime:** `3.6.0`. Formal acceptance passed with 268/268 tests twice, a six-experiment suite, compileall, and 610 SHA-256-verified result artifacts.
+**Historical v3.6 package/runtime:** `3.6.0`. Formal acceptance passed with 268/268 tests twice, a six-experiment suite, compileall, and 610 SHA-256-verified result artifacts.
 
 > **v3.5:** counterfactual observability and protected-outcome masking. v3.5 separates final protected outcomes, hidden unprotected evaluation outcomes, delayed component telemetry, and routine-only audits to test whether a resilience controller can still perceive primary risk after its own protection actions hide failures.
 
-**Current package/runtime:** `3.5.0`. Formal acceptance passed with 252/252 tests twice, a six-experiment suite, compileall, and 592 SHA-256-verified result artifacts.
+**Historical v3.5 package/runtime:** `3.5.0`. Formal acceptance passed with 252/252 tests twice, a six-experiment suite, compileall, and 592 SHA-256-verified result artifacts.
 
 > **v3.4:** adaptive risk-control orchestration. v3.4 closes the loop around the v3.3 resilience budget: delayed observed misses update global or per-criticality risk debt under distribution drift, while feedback delay, adaptation gain, tail latency, calibration error, resource feasibility, and radio correlation are measured explicitly.
 
-**Current package/runtime:** `3.4.0`. Formal v3.4 acceptance passed with 243/243 tests (twice, including no-manual-`PYTHONPATH`), a six-experiment suite, compileall, and 574 SHA-256-verified result artifacts.
+**Historical v3.4 package/runtime:** `3.4.0`. Formal v3.4 acceptance passed with 243/243 tests (twice, including no-manual-`PYTHONPATH`), a six-experiment suite, compileall, and 574 SHA-256-verified result artifacts.
 
 > **v3.3:** unified resilience-budget orchestration. The v3.2 release is preserved intact; v3.3 couples proactive migration, failure-domain replicas, and correlation-aware radio duplication under one finite reliability budget, with explicit forecast-uncertainty and excess-budget failure regions.
 
@@ -29,6 +29,14 @@
 Current release: **v3.7.1 Desktop / package 3.7.1**.
 
 ## Windows desktop edition
+
+### 实验工作台
+
+桌面版与开发环境均使用同一个 Streamlit 仪表盘。运行 `streamlit run app/dashboard.py` 后，可按研究方向或名称查找 130 个实验，收藏常用实验，并查看最近使用的实验。实验参数在侧栏表单中调整，点击“运行实验 · 更新结果”后更新模拟指标与图表；“恢复当前实验默认参数”会重置随机种子和该实验的控件。
+
+搜索框会显示当前匹配数量；手机端标题采用较紧凑的排版。本地收藏和运行历史在读取时会跳过不完整记录，并使用独立临时文件保存，以减少并发打开页面时的写入冲突。
+
+每次已提交运行可下载 JSON 参数与指标记录、CSV 指标表及当前图表 PNG。当前实验的历史记录保存在本机的 `%LOCALAPPDATA%\CommLab\workbench-v1.json`（其他系统在 `~/.local/share/CommLab/`）；同一实验且同名同单位的数值指标可比较。所有这些结果都是模拟结果，不是无线电实测数据。
 
 CommLab now includes a double-click desktop launcher. It starts the local simulation server on a dynamically selected `127.0.0.1` port, waits for a health check, opens the Dashboard, exposes reopen/copy-address controls, writes a local diagnostic log, and stops the child process when the control window closes. The Windows build workflow produces a portable ZIP and an installer with Start Menu and optional Desktop shortcuts. See [the Windows desktop guide](docs/windows_desktop_v3.7.1.md).
 
