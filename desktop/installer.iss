@@ -1,5 +1,5 @@
 #define MyAppName "CommLab"
-#define MyAppVersion "3.7.1"
+#define MyAppVersion "3.8.0"
 #define MyAppPublisher "ruoquecheng-eng"
 #define MyAppExeName "CommLab.exe"
 
@@ -14,7 +14,7 @@ PrivilegesRequired=lowest
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 OutputDir=..\desktop-artifacts
-OutputBaseFilename=CommLab-Setup-v3.7.1-Windows-x64
+OutputBaseFilename=CommLab-Setup-v3.8.0-Windows-x64
 Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern

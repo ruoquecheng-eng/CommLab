@@ -13,7 +13,7 @@ import urllib.request
 import webbrowser
 
 
-APP_VERSION = "3.7.1"
+APP_VERSION = "3.8.0"
 HEALTH_PATH = "/_stcore/health"
 
 

@@ -5,6 +5,8 @@ from pathlib import Path
 import pytest
 from streamlit.testing.v1 import AppTest
 
+from app.local_state import save_state
+
 
 DASHBOARD = Path(__file__).parents[1] / "app" / "dashboard.py"
 
@@ -83,3 +85,22 @@ def test_favorite_survives_new_session(monkeypatch, tmp_path):
     assert "OFDM Link" in app.session_state["lab_favorites"]
     reopened = start_app(monkeypatch, tmp_path)
     assert reopened.toggle(key="favorite:OFDM Link").value is True
+
+
+def test_new_session_restores_last_used_lab(monkeypatch, tmp_path):
+    save_state({"favorites": [], "recent": ["Phase Noise"], "records": []}, tmp_path / "workbench-v1.json")
+    app = start_app(monkeypatch, tmp_path)
+    assert app.selectbox(key="lab_selection").value == "Phase Noise"
+    assert app.session_state["lab_records"][0]["lab"] == "Phase Noise"
+
+
+def test_comparison_shows_signed_change_with_percentage_points(monkeypatch, tmp_path):
+    app = start_app(monkeypatch, tmp_path)
+    app.slider[0].set_value(25.0)
+    app.button(key="FormSubmitter:parameters:OFDM Link:0-运行实验 · 更新结果").click().run()
+    assert not app.exception
+    table = app.dataframe[0].value
+    assert "变化" in table.columns
+    evm = table.loc[table["指标"] == "RMS EVM"].iloc[0]
+    assert evm["变化"].endswith(" pp")
+    assert evm["变化"].startswith("-")

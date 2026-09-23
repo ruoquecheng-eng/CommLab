@@ -72,6 +72,14 @@ st.markdown("<style>@media (max-width: 600px) {.stApp h1 {font-size: 2rem; line-
 st.title("CommLab 实验工作台")
 st.caption("本地模拟实验。结果由所选模型与随机种子生成，不代表实测无线链路或标准兼容性。")
 
+if "lab_favorites" not in st.session_state:
+    saved_state = load_state()
+    st.session_state["lab_favorites"] = [name for name in saved_state["favorites"] if name in ALL_LABS]
+    st.session_state["lab_recent"] = list(recent_labs(saved_state["recent"]))
+    st.session_state["lab_records"] = saved_state["records"]
+    if st.session_state["lab_recent"] and "lab_selection" not in st.session_state:
+        st.session_state["lab_selection"] = st.session_state["lab_recent"][0]
+
 st.sidebar.header("实验导航")
 query = st.sidebar.text_input("搜索实验", key="lab_query", placeholder="名称、缩写或研究方向")
 group = st.sidebar.selectbox("研究方向", ("All", *GROUPS), key="lab_group", format_func=lambda value: "全部" if value == "All" else GROUP_LABELS[value])
@@ -81,11 +89,6 @@ if not available:
     st.sidebar.info("没有匹配的实验。调整搜索词或方向后重试。")
     st.stop()
 mode = st.sidebar.selectbox("实验", available, key="lab_selection")
-if "lab_favorites" not in st.session_state:
-    saved_state = load_state()
-    st.session_state["lab_favorites"] = [name for name in saved_state["favorites"] if name in ALL_LABS]
-    st.session_state["lab_recent"] = list(recent_labs(saved_state["recent"]))
-    st.session_state["lab_records"] = saved_state["records"]
 favorites = st.session_state["lab_favorites"]
 previous_favorites = tuple(favorites)
 if st.sidebar.toggle("收藏当前实验", value=mode in favorites, key=f"favorite:{mode}"):
@@ -1155,7 +1158,7 @@ with st.expander("结果记录、导出与对比", expanded=True):
         candidate = st.selectbox("与先前运行对比", range(len(previous)), format_func=lambda index: f"{previous[index]['created_utc']} · 种子 {previous[index]['seed']}")
         pairs = comparable_metrics(previous[candidate], record)
         if pairs:
-            st.dataframe([{"指标": name, "先前": old, "当前": new, "单位": unit} for name, old, new, unit in pairs], hide_index=True)
+            st.dataframe([{"指标": name, "先前": old, "当前": new, "变化": f"{new-old:+.4g} {'pp' if unit == '%' else unit}".strip(), "单位": unit} for name, old, new, unit in pairs], hide_index=True)
         else:
             st.caption("这两次运行没有可直接比较的同名、同单位数值指标。")
 run_status.update(label=f"模拟完成 · 上次提交参数 · {elapsed:.2f} 秒 · 种子 {seed}", state="complete")
